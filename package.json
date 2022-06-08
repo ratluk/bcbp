@@ -1,0 +1,25 @@
+{
+  "name": "bcbp",
+  "version": "1.0.0",
+  "description": "Barcoded boarding pass ",
+  "source": "index.js",
+  "main": "build/main.mjs",
+  "license": "MIT",
+  "private": false,
+  "module": "build/module.js",
+  "devDependencies": {
+    "jest": "^28.1.1",
+    "parcel": "^2.6.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "targets": {
+    "main": {
+      "optimize": true,
+      "outputFormat": "esmodule"
+    }
+  }
+}
