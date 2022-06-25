@@ -3,20 +3,20 @@
 */
 
 function getTitle(name){
-    let m = name.match(/ MR| MRS| MSTR| DR| MISS| MS/g) || "N/A";
+    let m = name.match(/ MRS| MR| MSTR| DR| MISS| MS/g) || "N/A";
 
     switch (m[0]) {
-        case " MR":
-            return {
-                type: "MR",
-                sex: "M",
-                age: "adult",
-                description: ""
-            }
         case " MRS":
             return {
                 type: "MRS",
                 sex: "F",
+                age: "adult",
+                description: ""
+            }
+        case " MR":
+            return {
+                type: "MR",
+                sex: "M",
                 age: "adult",
                 description: ""
             }
@@ -57,7 +57,7 @@ function getName(passengerName){
     return {
         first:  (() => {
             let n = passengerName.slice(0,21).split("/")[1].trim();
-            return n.replace(/ MR| MRS| MSTR| DR| MISS| MS/i, "")
+            return n.replace(/ MRS| MR| MSTR| DR| MISS| MS/i, "")
         })(),
         last:   passengerName.slice(0,21).split("/")[0].split(" ")[0].trim(),
         title:  getTitle(passengerName.slice(2,21).split("/")[1])
